@@ -1,10 +1,7 @@
 {
-  "name": "pptxgenjs",
-  "version": "3.3.1",
-  "author": {
-    "name": "Brent Ely",
-    "url": "https://github.com/gitbrent/"
-  },
+  "name": "@flavorwiki/pptxgenjs",
+  "version": "3.3.2",
+  "author": "Brent Ely (https://github.com/gitbrent/)",
   "description": "Create JavaScript PowerPoint Presentations",
   "homepage": "https://gitbrent.github.io/PptxGenJS/",
   "license": "MIT",
