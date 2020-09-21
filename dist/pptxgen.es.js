@@ -1,4 +1,4 @@
-/* PptxGenJS 3.3.1 @ 2020-08-23T19:00:27.034Z */
+/* PptxGenJS 3.3.1 @ 2020-09-21T16:11:15.920Z */
 import * as JSZip from 'jszip';
 
 /**
@@ -5179,6 +5179,18 @@ function makeChartType(chartType, data, opts, valAxisId, catAxisId, isMultiTypeC
                         strXml += createShadowElement(opts.shadow, DEF_SHAPE_SHADOW);
                         strXml += '    </c:spPr>';
                         strXml += '  </c:dPt>';
+                    });
+                }
+                if (opts.lineDataSymbols) {
+                    opts.lineDataSymbols.map(function (_a) {
+                        var idx = _a.idx, symbol = _a.symbol;
+                        strXml += '<c:dPt>';
+                        strXml += '  <c:idx val="' + idx + '" />';
+                        strXml += '  <c:marker>';
+                        strXml += '    <c:symbol val="' + symbol + '" />';
+                        strXml += '    <c:size val="10" />';
+                        strXml += '  </c:marker>';
+                        strXml += '</c:dPt>';
                     });
                 }
                 // 3: "Values": Scatter Chart has 2: `xVal` and `yVal`

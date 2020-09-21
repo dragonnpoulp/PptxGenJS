@@ -1149,6 +1149,18 @@ function makeChartType(chartType: CHART_NAME, data: OptsChartData[], opts: IChar
 					})
 				}
 
+				if(opts.lineDataSymbols) {
+					opts.lineDataSymbols.map(({ idx, symbol }) => {
+						strXml += '<c:dPt>'
+						strXml += '  <c:idx val="' + idx + '" />'
+						strXml += '  <c:marker>'
+						strXml += '    <c:symbol val="' + symbol + '" />'
+						strXml += '    <c:size val="10" />'
+						strXml += '  </c:marker>'
+						strXml += '</c:dPt>'
+					})
+				}
+
 				// 3: "Values": Scatter Chart has 2: `xVal` and `yVal`
 				{
 					// X-Axis is always the same

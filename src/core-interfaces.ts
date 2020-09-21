@@ -1069,6 +1069,7 @@ export interface IChartPropsChartDoughnut {
 export interface IChartPropsChartLine {
 	lineDash?: 'dash' | 'dashDot' | 'lgDash' | 'lgDashDot' | 'lgDashDotDot' | 'solid' | 'sysDash' | 'sysDot'
 	lineDataSymbol?: 'circle' | 'dash' | 'diamond' | 'dot' | 'none' | 'square' | 'triangle'
+	lineDataSymbols?: Array<{ idx: number, symbol: 'circle' | 'dash' | 'diamond' | 'dot' | 'none' | 'square' | 'triangle' }>
 	lineDataSymbolLineColor?: string
 	lineDataSymbolLineSize?: number
 	lineDataSymbolSize?: number
