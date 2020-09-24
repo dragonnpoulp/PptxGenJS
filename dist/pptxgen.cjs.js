@@ -1,4 +1,4 @@
-/* PptxGenJS 3.3.1 @ 2020-09-21T16:11:15.912Z */
+/* PptxGenJS 3.3.2 @ 2020-09-24T02:49:24.786Z */
 'use strict';
 
 var JSZip = require('jszip');
@@ -3205,9 +3205,9 @@ function addChartDefinition(target, type, data, opt) {
     //
     if (!options.dataLabelFormatCode && options._type === CHART_TYPE.SCATTER)
         options.dataLabelFormatCode = 'General';
-    options.dataLabelFormatCode = options.dataLabelFormatCode && typeof options.dataLabelFormatCode === 'string' ? options.dataLabelFormatCode : '#,##0';
     if (options._type === CHART_TYPE.PIE || options._type === CHART_TYPE.DOUGHNUT)
-        options.dataLabelFormatCode = options.showPercent ? '0%' : 'General';
+        options.dataLabelFormatCode = options.dataLabelFormatCode || (options.showPercent ? '0%' : 'General');
+    options.dataLabelFormatCode = options.dataLabelFormatCode && typeof options.dataLabelFormatCode === 'string' ? options.dataLabelFormatCode : '#,##0';
     //
     // Set default format for Scatter chart labels to custom string if not defined
     if (!options.dataLabelFormatScatter && options._type === CHART_TYPE.SCATTER)
